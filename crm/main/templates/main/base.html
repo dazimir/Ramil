@@ -1,0 +1,223 @@
+    {% load static %}
+
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+
+
+<nav>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <a href="/"><i class='bx bx-globe'> </i> </a>
+      <span class="logo_name">ООО ГК-НК</span>
+    </div>
+    <ul class="nav-links">
+
+      <li>
+        <div class="iocn-link">
+          <a href="{% url 'zayavlenie' %}">
+            <i class='bx bx-group' ></i>
+            <span class="link_name">Заявитель</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="{% url 'zayavlenie' %}">Заявитель</a></li>
+          <li><a href="{% url 'zayavlenie_FL' %}">Физ лицо</a></li>
+          <li><a href="{% url 'zayavlenie_UL' %}">Юр лицо</a></li>
+          <li><a href="{% url 'zayavlenie_GOS' %}">Государство</a></li>
+        </ul>
+      </li>
+
+
+      <li>
+        <div class="iocn-link">
+          <a href="{% url 'objects_card' %}">
+            <i class='bx bx-sitemap' ></i>
+            <span class="link_name">Объект</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="{% url 'objects_card' %}">Объект</a></li>
+          <li><a href="{% url 'objects_list' %}">Список объектов</a></li>
+          <li><a href="{% url 'objects_search' %}">Поиск объектов</a></li>
+          <li><a href="{% url 'objects_registration' %}">Регистрация объекта</a></li>
+        </ul>
+      </li>
+
+
+      <li>
+        <div class="iocn-link">
+          <a href="{% url 'statistik' %}">
+            <i class='bx bx-bar-chart-square' ></i>
+            <span class="link_name">Статистика</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="{% url 'statistik' %}">Статистика</a></li>
+          <li><a href="{% url 'statistik_operator' %}">Статистика по исполнителям</a></li>
+          <li><a href="{% url 'statistik_works' %}">Статистика по делам</a></li>
+          <li><a href="{% url 'statistik_analiz' %}">Анализ</a></li>
+        </ul>
+      </li>
+
+
+      <li>
+        <div class="iocn-link">
+          <a href="{% url 'print' %}">
+            <i class='bx bx-printer'></i>
+            <span class="link_name">Печать</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="{% url 'print' %}">Печать</a></li>
+          <li><a href="{% url 'print_report' %}">Печать отчетов</a></li>
+          <li><a href="{% url 'print_doc' %}">Печать документов</a></li>
+        </ul>
+      </li>
+
+
+      <li>
+        <a href="{% url 'operators' %}">
+          <i class='bx bx-user-circle' ></i>
+          <span class="link_name">Операторы</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{% url 'operators' %}">Операторы</a></li>
+        </ul>
+      </li>
+
+
+      <li>
+        <a href="{% url 'admin' %}">
+          <i class='bx bxs-data' ></i>
+          <span class="link_name">Администрирование</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{% url 'admin' %}">Администрирование</a></li>
+        </ul>
+      </li>
+
+
+      <li>
+        <a href="{% url 'settings' %}">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Настройка</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{% url 'settings' %}">Настройка</a></li>
+        </ul>
+      </li>
+
+
+      <li>
+        <div class="iocn-link">
+          <a href="{% url 'sites' %}">
+            <i class='bx bxl-internet-explorer'></i>
+            <span class="link_name">Сайты</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="{% url 'sites' %}">Сайты</a></li>
+          <li><a href="https://pkk.rosreestr.ru/#/search/55.42962208654621,51.90471980568058/11/@nkfazkxox" target="_blank">ПКК</a></li>
+          <li><a href="#">Заказ выписок</a></li>
+          <li><a href="#">ФГУ ЗКП</a></li>
+          <li><a href="#">ПЗЗ</a></li>
+          <li><a href="#">Личный кабинет КИ</a></li>
+          <li><a href="#">Технокад</a></li>
+        </ul>
+  </li>
+
+
+
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <div class="profile-details">
+
+     {% if request.user.is_authenticated %}
+      <div class="profile-content">
+
+        <img src="{{ user.employee.photo.url }}" alt="profileImg">
+<!--{{ user.employee.photo.url }}-->
+      </div>
+      <div class="name-job">
+          <div class="profile_name">{{ user.username }}</div>
+          <div class="job">{% block operator_job %}{% endblock %}</div>
+        {% else %}
+        <div class="profile-content">
+        <img src="{% static 'img/logout.png' %}" alt="profileImg">
+      </div>
+      <div class="name-job">
+        <div class="profile_name ">Вход для оператора</div>
+        <div class="job">только зарегестрированным</div>
+        {% endif %}
+
+      </div>
+      <a href="{% url 'login' %}"> <i class='bx bx-log-out color-exit'></i></a>
+    </div>
+
+
+
+</ul>
+  </div>
+
+
+
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text"></span>
+        <h2 class="text-center text_shadow"> {% block page_name %}{% endblock %}</h2>
+          <hr>
+    </div>
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<main class="main-telo">
+{% block content1 %}{% endblock %}
+</main>
+
+
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+</nav>
+  </section>
+
+
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+
+
+</div>
+</body>
+</html>

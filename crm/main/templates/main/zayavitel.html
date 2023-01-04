@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+CRM "ГК-НК"
+{% endblock %}
+
+{% block operator_name %}
+Мингазов Рамиль
+{% endblock %}
+
+{% block operator_job %}
+Кадастровый инженер
+{% endblock %}
+
+
+{% block page_name %}
+    ВЫБОР ЗАЯВИТЕЛЕЙ
+{% endblock %}
+
+{% block content1 %}
+<div class="row justify-content-md-center">
+    <h4><center>Выбири тип заявителя:<center></h4><hr>
+
+    <a href="{% url 'zayavlenie_FL' %}" class="btn btn-success buttons">Физическое лицо</a>
+    <a href="{% url 'zayavlenie_UL' %}" class="btn btn-success buttons">Юридическое лицо</a>
+    <a href="{% url 'zayavlenie_GOS' %}" class="btn btn-success buttons">Государственный орган</a>
+
+</div>
+{% endblock %}

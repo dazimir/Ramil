@@ -1,0 +1,86 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+CRM "ГК-НК"
+{% endblock %}
+
+{% block operator_name %}
+Мингазов Рамиль
+{% endblock %}
+
+{% block operator_job %}
+Кадастровый инженер
+{% endblock %}
+
+
+{% block page_name %}
+    ЗАЯВИТЕЛЬ ФИЗ.ЛИЦО
+{% endblock %}
+
+{% block content1 %}
+<div>
+    <div>
+<h3 class="primer1"> <center>Данные клиента</center> </h3>
+<form class="row g-3">
+          <div class="col-md-4">
+            <label for="validationServer01" class="form-label">Фамилия</label>
+            {{ form.ind_last_name}}
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer02" class="form-label">Имя</label>
+            {{ form.ind_name_name}}
+          </div>
+          <div class="col-md-4">
+            <label for="validationServerUsername" class="form-label">Отчество</label>
+            {{ form.ind_first_name}}
+        </div> <hr class="hr">
+
+<h3 class="primer1"> <center>Паспортные данные клиента</center> </h3>
+          <div class="col-md-2">
+            <label for="validationServer03" class="form-label">Дата выдачи паспорта</label>
+            {{ form.ind_date_of_issue}}
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer04" class="form-label">Кем выдан паспорт</label>
+            {{ form.ind_place_of_issue}}
+          </div>
+          <div class="col-md-2">
+            <label for="validationServer05" class="form-label">Код подразделения</label>
+            {{ form.ind_division_code}}
+          </div>
+          <div class="col-md-3">
+            <label for="validationServer05" class="form-label">Серия номер паспорта</label>
+            {{ form.ind_sn_passport}}
+        </div> <hr class="hr">
+
+<h3 class="primer1"> <center>Прописка и регистрация клиента</center> </h3>
+          <div class="col-md-4">
+            <label for="validationServer01" class="form-label">Адрес регистрации по паспорту</label>
+            {{ form.ind_registration_address}}
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer02" class="form-label">Дата регистрации</label>
+            {{ form.ind_date_registration}}
+          </div>
+          <div class="col-md-4">
+            <label for="validationServerUsername" class="form-label">Фактическое место жительства</label>
+            {{ form.ind_residential_address}}
+        </div> <hr class="hr">
+
+<h3 class="primer1"> <center>СНИЛС</center> </h3>
+          <div class="col-md-2">
+            <label for="validationServer01" class="form-label">СНИЛС</label>
+            {{ form.ind_snils}}
+          </div> <hr class="hr">
+
+
+
+
+          <div class="col-12">
+            <button class="btn btn-primary" type="post">Отправить форму</button>
+          </div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
