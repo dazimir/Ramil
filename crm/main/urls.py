@@ -13,6 +13,10 @@ urlpatterns = [
     path('zayavlenie_UL', views.zayavlenie_UL, name='zayavlenie_UL'),
     path('zayavlenie_GOS', views.zayavlenie_GOS, name='zayavlenie_GOS'),
 
+    path('spisok_zayavit_FL', views.spisok_zayavit_FL, name='spisok_zayavit_FL'),
+    # path('spisok_zayavit_UL', views.spisok_zayavit_UL, name='spisok_zayavit_UL'),
+    # path('spisok_zayavit_GOS', views.spisok_zayavit_GOS, name='spisok_zayavit_GOS'),
+
     path('objects_card', views.objects_card, name='objects_card'),
     path('objects_list', views.objects_list, name='objects_list'),
     path('objects_search', views.objects_search, name='objects_search'),

@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+CRM "ГК-НК"
+{% endblock %}
+
+{% block operator_name %}
+Мингазов Рамиль
+{% endblock %}
+
+{% block operator_job %}
+Кадастровый инженер
+{% endblock %}
+
+
+{% block page_name %}
+    СПИСОК ЗАЯВИТЕЛЕЙ ФИЗ.ЛИЦА
+{% endblock %}
+
+{% block content1 %}
+<div>
+<h3 class="primer1"> <center>Список заявителей</center> </h3>
+<form method="post">
+    {% csrf_token %}
+
+{% for el in cards %}
+<div class="boxShadow8 line_block">
+    <hr>
+    <h4 class="text_shadow">{{ el.ind_last_name }} {{ el.ind_name_name }} {{ el.ind_first_name}}</h4>
+    паспорт<br>
+    <hr>
+    <pre>выдан               : <b>{{ el.ind_place_of_issue }}</b></pre>
+    <pre>подразделение       : <b>{{ el.ind_division_code }}</b></pre>
+    <pre>дата выдачи         : <b>{{ el.ind_date_of_issue }}</b></pre>
+    <pre>адрес регистрации   : <b>{{ el.ind_registration_address }}</b></pre>
+    <pre>адрес проживания    : <b>{{ el.ind_residential_address }}</b></pre>
+    <pre>серия номер паспорта: <b>{{ el.ind_sn_passport }}</b></pre>
+    СНИЛС<br>
+    <hr>
+    <pre>номер снилса        : <b>{{ el.ind_snils }}</b></pre>
+    <hr>
+
+
+</div>
+{% endfor %}
+</form>
+{% endblock %}

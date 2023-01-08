@@ -18,6 +18,22 @@ CRM "ГК-НК"
 {% endblock %}
 
 {% block content1 %}
-    <p>Здесь будут статистика</p>
-    <h3>сводные статистические данные</h3>
+    <h3 class="primer1"><center>Списки<center></h3><hr>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-lg-2">
+
+    </div>
+    <div class="col-md-auto">
+        <a href="{% url 'spisok_zayavit_FL' %}" class="btn btn-success">Список заявителей ФЛ</a>
+        <a href="{% url 'zayavlenie_UL' %}" class="btn btn-success">Список заявителей ЮЛ</a>
+        <a href="{% url 'zayavlenie_GOS' %}" class="btn btn-success">Список заявителей ГОС</a>
+    </div>
+    <div class="col col-lg-2">
+
+    </div>
+  </div>
+</div>
+
 {% endblock %}

@@ -144,6 +144,13 @@ def zayavlenie_FL(request):
     return render(request, 'main/zayavitel_FL.html', context)
 
 
+# ======================================================================================
 
 
+def spisok_zayavit_FL(request):
+    if request.method == 'GET':
+        cards = IndCustomer.objects.order_by('-id')
+        print('------ это GET  -------')
+        return render(request, 'main/spisok_zayavit_FL.html',
+                      {'title2': 'Карточка', 'cards': cards})  # выводим все карточки
 
