@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django import forms
 from django.urls import reverse_lazy
 
-from .forms import LoginUserForm, InputFLForm
+from .forms import LoginUserForm, InputFLForm, InputULForm
 from .models import *
 
 from django.shortcuts import render
@@ -144,7 +144,41 @@ def zayavlenie_FL(request):
     return render(request, 'main/zayavitel_FL.html', context)
 
 
+
+
+
+# --------------------------------------------------------------------------------------------------------------------
+def zayavlenie_UL(request):
+    error = ''
+    print('=====1=======')
+    if request.method == 'POST':
+        print('===== если POST =======')
+        form = InputULForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print('==== если валид =======')
+            return redirect('/')
+        else:
+            error = 'Поля заполнены не верно'
+    form = InputULForm()
+    context = {
+        'form': form,
+        'error': error,
+        'page_title': 'Ввод данных заявителя, юридическое лицо',
+        'temp': 'НОВАЯ'
+    }
+    return render(request, 'main/zayavitel_UL.html', context)
+
+
+
+
+
+
+
 # ======================================================================================
+
+
+
 
 
 def spisok_zayavit_FL(request):

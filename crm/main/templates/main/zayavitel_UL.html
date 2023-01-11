@@ -4,19 +4,54 @@
 CRM "ГК-НК"
 {% endblock %}
 
-{% block operator_name %}
-Мингазов Рамиль
-{% endblock %}
-
-{% block operator_job %}
-Кадастровый инженер
-{% endblock %}
-
-
 {% block page_name %}
-    ЗАЯВИТЕЛЬ ЮР.ЛИЦО
+    ЗАЯВИТЕЛЬ ЮРИДИЧЕСКОЕ ЛИЦО
 {% endblock %}
 
 {% block content1 %}
-    <h3>Здесь будет поля для заполнения данных организации </h3>
+<div>
+<h3 class="primer1"> <center>Данные юридического лица</center> </h3>
+<form method="post">
+    {% csrf_token %}
+
+    <div class="row g-3">
+          <div class="col-md-4">
+            <label for="validationServer01" class="form-label">Название юридического лица</label>
+            {{ form.ul_name}}
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer02" class="form-label">ИНН</label>
+            {{ form.ul_inn}}
+          </div>
+          <div class="col-md-4">
+            <label for="validationServerUsername" class="form-label">ОГРН</label>
+            {{ form.ul_ogrn}}
+        </div> <hr class="hr">
+    </div>
+
+
+<h3 class="primer1"> <center>Контакты юридического лица</center> </h3>
+     <div class="row g-3">
+          <div class="col-md-4">
+            <label for="validationServer01" class="form-label">Адрес организации</label>
+            {{ form.ul_adress}}
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer02" class="form-label">Телефон организации</label>
+            {{ form.ul_phone}}
+          </div>
+          <div class="col-md-4">
+            <label for="validationServerUsername" class="form-label">Email организации</label>
+            {{ form.ul_email}}
+        </div> <hr class="hr">
+    </div>
+
+
+        <hr class="hr">
+
+              <div class="col-12">
+            <button class="btn btn-primary" type="post">Сохранить юр. лицо</button>
+          </div>
+</form>
+</div>
 {% endblock %}

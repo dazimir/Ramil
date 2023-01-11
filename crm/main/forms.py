@@ -79,3 +79,51 @@ class InputFLForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'СНИЛС'}),
         }
+
+
+# --------------------------------------------------------------------------------------------------------------------------------
+# создаем класс КАРТОЧКА ЗАЯВИТЕЛЯ
+
+class InputULForm(ModelForm):
+    class Meta:
+        model = URCustomer
+        fields = ['ul_name',
+                  'ul_inn',
+                  'ul_ogrn',
+                  'ul_adress',
+                  'ul_phone',
+                  'ul_email']
+        widgets = {
+            # "date_input_card": TextInput(attrs={'type': 'date',
+            #                                     'class': 'form-control',
+            #                                     'placeholder': 'Дата создания карточки', 'type': 'date'}),
+            "ul_name": TextInput(attrs={
+                'class': 'form-control',
+                'id': 'familiya',
+                'placeholder': 'Название организации'}),
+
+            "ul_inn": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'ИНН организации'}),
+
+            "ul_ogrn": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'ОГРН организации'}),
+
+            # "ul_adress": TextInput(attrs={'type': 'date',
+            #                                       'class': 'form-control',
+            #                                       'placeholder': 'Дата выдачи', 'type': 'date'}),
+
+            "ul_adress": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Адрес организации'}),
+
+            "ul_phone": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Телефон организации'}),
+
+            "ul_email": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Email организации'}),
+
+        }

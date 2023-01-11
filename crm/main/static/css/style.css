@@ -315,6 +315,17 @@
         padding: 10px;
         }
 
+.raz {
+  border: 1px solid red;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  margin: 2em;
+  min-height: 2em;
+  background: lightpink;
+}
+
 @media (max-width: 420px) {
   .sidebar.close .nav-links li .sub-menu{
     display: none;

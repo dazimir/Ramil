@@ -30,6 +30,7 @@ class IndCustomer(models.Model):
     ind_date_registration = models.DateField('Дата регистрации')
     ind_sn_passport = models.CharField('Серия и номер паспорта', max_length=15)
     ind_snils = models.CharField('Номер СНИЛС', max_length=14)
+    # kodnomer = models.CharField('номер клиента', max_length=14)
 
     def __str__(self):
         n = str(self.ind_last_name + ' ' + self.ind_name_name + ' ' + self.ind_first_name)
@@ -41,3 +42,29 @@ class IndCustomer(models.Model):
     class Meta:
         verbose_name = 'Заявитель ФЛ'
         verbose_name_plural = 'Заявители ФЛ'
+
+
+""" DB Заказчик ЮЛ """
+
+
+class URCustomer(models.Model):
+    date_card = models.DateField('Дата создания карточки', null=True, default=timezone.now)
+    ul_name = models.CharField('Название юр.лица', max_length=50)
+    ul_inn = models.CharField('ИНН', max_length=50)
+    ul_ogrn = models.CharField('ОГРН', max_length=50)
+    ul_adress = models.CharField('ЮР адрес', max_length=250)
+    ul_phone = models.CharField('телефон', max_length=7)
+    ul_email = models.DateField('email')
+
+    ul_kodnomer = models.CharField('номер клиента', max_length=14)
+
+    def __str__(self):
+        n = str(self.ul_name)
+        return n
+
+    def get_absolute_url(self):
+        return self.id
+
+    class Meta:
+        verbose_name = 'Заявитель ЮРЛ'
+        verbose_name_plural = 'Заявители ЮРЛ'
