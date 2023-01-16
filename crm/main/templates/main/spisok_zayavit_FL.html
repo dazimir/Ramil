@@ -39,7 +39,9 @@ CRM "ГК-НК"
     <hr>
     <pre>номер снилса        : <b>{{ el.ind_snils }}</b></pre>
     <hr>
-
+    <a href="{% url 'zayavlenie_FL' %}" class="btn btn-success btn-sm">Завести новую карточку</a>
+    <a href="{% url 'card-delete_FL' el.id %}" class="btn btn-danger btn-sm">Удалить карточку</a>
+    <a href="{% url 'card-update_FL' el.id %}" class="btn btn-info btn-sm">Редактировать карточку</a>
 
 </div>
 {% endfor %}

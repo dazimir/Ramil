@@ -4,6 +4,7 @@ from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django import forms
 from django.urls import reverse_lazy
+from django.views.generic import DeleteView, UpdateView
 
 from .forms import LoginUserForm, InputFLForm, InputULForm
 from .models import *
@@ -144,7 +145,19 @@ def zayavlenie_FL(request):
     return render(request, 'main/zayavitel_FL.html', context)
 
 
+class CardsDeleteView_FL(DeleteView):
+    model = IndCustomer
+    success_url = '/spisok_zayavit_FL'
+    context_object_name = 'article'
+    template_name = 'main/card-delete_FL.html'
 
+
+class CardsUpdateView_FL(UpdateView):
+    model = IndCustomer
+    success_url = '/spisok_zayavit_FL'
+    template_name = 'main/zayavitel_FL.html'
+    context_object_name = 'article'
+    form_class = InputFLForm
 
 
 # --------------------------------------------------------------------------------------------------------------------
@@ -152,14 +165,16 @@ def zayavlenie_UL(request):
     error = ''
     print('=====1=======')
     if request.method == 'POST':
-        print('===== если POST =======')
+        print('===== если POST ЮР лицо =======')
         form = InputULForm(request.POST)
         if form.is_valid():
             form.save()
-            print('==== если валид =======')
+            print('==== если валид ЮР лицо =======')
             return redirect('/')
         else:
+            print('==== ОБЛОМ валидация не пройдена =================  ')
             error = 'Поля заполнены не верно'
+
     form = InputULForm()
     context = {
         'form': form,
@@ -170,15 +185,22 @@ def zayavlenie_UL(request):
     return render(request, 'main/zayavitel_UL.html', context)
 
 
+class CardsDeleteView_UL(DeleteView):
+    model = URCustomer
+    success_url = '/spisok_zayavit_UL'
+    context_object_name = 'article'
+    template_name = 'main/card-delete_UL.html'
 
 
-
+class CardsUpdateView_UL(UpdateView):
+    model = URCustomer
+    success_url = '/spisok_zayavit_UL'
+    template_name = 'main/zayavitel_UL.html'
+    context_object_name = 'article'
+    form_class = InputULForm
 
 
 # ======================================================================================
-
-
-
 
 
 def spisok_zayavit_FL(request):
@@ -188,3 +210,10 @@ def spisok_zayavit_FL(request):
         return render(request, 'main/spisok_zayavit_FL.html',
                       {'title2': 'Карточка', 'cards': cards})  # выводим все карточки
 
+
+def spisok_zayavit_UL(request):
+    if request.method == 'GET':
+        cardsUL = URCustomer.objects.order_by('-id')
+        print('------ это GET  -------')
+        return render(request, 'main/spisok_zayavit_UL.html',
+                      {'title2': 'Карточка', 'cards': cardsUL})  # выводим все карточки

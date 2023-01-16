@@ -12,9 +12,15 @@ urlpatterns = [
     path('zayavlenie_FL', views.zayavlenie_FL, name='zayavlenie_FL'),
     path('zayavlenie_UL', views.zayavlenie_UL, name='zayavlenie_UL'),
     path('zayavlenie_GOS', views.zayavlenie_GOS, name='zayavlenie_GOS'),
+    path('<int:pk>/card-delete_FL', views.CardsDeleteView_FL.as_view(), name='card-delete_FL'),
+    path('<int:pk>/card-update_FL', views.CardsUpdateView_FL.as_view(), name='card-update_FL'),
+
+    path('<int:pk>/card-delete_UL', views.CardsDeleteView_UL.as_view(), name='card-delete_UL'),
+    path('<int:pk>/card-update_UL', views.CardsUpdateView_UL.as_view(), name='card-update_UL'),
+
 
     path('spisok_zayavit_FL', views.spisok_zayavit_FL, name='spisok_zayavit_FL'),
-    # path('spisok_zayavit_UL', views.spisok_zayavit_UL, name='spisok_zayavit_UL'),
+    path('spisok_zayavit_UL', views.spisok_zayavit_UL, name='spisok_zayavit_UL'),
     # path('spisok_zayavit_GOS', views.spisok_zayavit_GOS, name='spisok_zayavit_GOS'),
 
     path('objects_card', views.objects_card, name='objects_card'),

@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+CRM "ГК-НК"
+{% endblock %}
+
+{% block operator_name %}
+Мингазов Рамиль
+{% endblock %}
+
+{% block operator_job %}
+Кадастровый инженер
+{% endblock %}
+
+
+{% block page_name %}
+    СПИСОК ЗАЯВИТЕЛЕЙ ЮЛ.ЛИЦА
+{% endblock %}
+
+{% block content1 %}
+<div>
+<h3 class="primer1"> <center>Список заявителей</center> </h3>
+<form method="post">
+    {% csrf_token %}
+
+{% for el in cards %}
+<div class="boxShadow8 line_block">
+    <hr>
+    <h4 class="text_shadow">{{ el.ul_name }}</h4>
+    <hr>
+    <pre>организация         : <b>{{ el.ul_name }}</b></pre>
+    <pre>ИНН организации     : <b>{{ el.ul_inn }}</b></pre>
+    <pre>ОГРН организации    : <b>{{ el.ul_ogrn }}</b></pre>
+    <pre>адрес организации   : <b>{{ el.ul_adress }}</b></pre>
+    <pre>телефон организации : <b>{{ el.ul_phone }}</b></pre>
+    <pre>Email организации   : <b>{{ el.ul_email }}</b></pre>
+    <hr>
+    <a href="{% url 'zayavlenie_UL' %}" class="btn btn-success btn-sm">Завести новую карточку</a>
+    <a href="{% url 'card-delete_UL' el.id %}" class="btn btn-danger btn-sm">Удалить карточку</a>
+    <a href="{% url 'card-update_UL' el.id %}" class="btn btn-info btn-sm">Редактировать карточку</a>
+
+</div>
+{% endfor %}
+</form>
+{% endblock %}

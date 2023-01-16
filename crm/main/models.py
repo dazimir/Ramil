@@ -53,10 +53,10 @@ class URCustomer(models.Model):
     ul_inn = models.CharField('ИНН', max_length=50)
     ul_ogrn = models.CharField('ОГРН', max_length=50)
     ul_adress = models.CharField('ЮР адрес', max_length=250)
-    ul_phone = models.CharField('телефон', max_length=7)
-    ul_email = models.DateField('email')
-
-    ul_kodnomer = models.CharField('номер клиента', max_length=14)
+    ul_phone = models.CharField('телефон', max_length=20)
+    ul_email = models.CharField('email', max_length=50)
+    #
+    # ul_kodnomer = models.CharField('номер клиента', max_length=14)
 
     def __str__(self):
         n = str(self.ul_name)
