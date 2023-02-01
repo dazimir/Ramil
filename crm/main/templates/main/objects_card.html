@@ -4,19 +4,97 @@
 CRM "ГК-НК"
 {% endblock %}
 
-{% block operator_name %}
-Мингазов Рамиль
-{% endblock %}
-
-{% block operator_job %}
-Кадастровый инженер
-{% endblock %}
-
-
 {% block page_name %}
     КАРТОЧКИ ОБЪЕКТОВ
 {% endblock %}
 
 {% block content1 %}
-    Здесь будут карточки объектов с полем поиска, у карточек будут доп кнопки
+
+
+<div>
+<h3 class="primer1"> <center>Данные хозяина объекта</center> </h3>
+<form method="post">
+    {% csrf_token %}
+
+    <fieldset class="mb-3">
+            <legend>Тип заявителя</legend>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="form-check">
+                  <input type="radio" name="radios" class="form-check-input" id="exampleRadio1">
+                  <label class="form-check-label" for="exampleRadio1">Физическое лицо</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="radio" name="radios" class="form-check-input" id="exampleRadio2">
+                  <label class="form-check-label" for="exampleRadio2">Юридическое лицо</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="radio" name="radios" class="form-check-input" id="exampleRadio3">
+                  <label class="form-check-label" for="exampleRadio3">Гос.орган</label>
+                </div>
+             </div>
+
+
+            <div class="col-md-4">
+                <div class="md-3">
+                <label for="validationServer01" class="form-label">Заявитель </label>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected="">Выбирите заявителя из последних</option>
+                    <option value="1">последний заявитель из Б/Д</option>
+                    <option value="2">пред последний заявитель из Б/Д</option>
+                    <option value="3">пред пред последний заявитель из Б/Д</option>
+                </select>
+                </div>
+
+            </div>
+            <hr>
+         </div>
+    </fieldset>
+
+
+
+<h3 class="primer1"> <center>Объект</center> </h3>
+
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label for="validationServer03" class="form-label">Вид работ</label>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected="">Выбирите вид объекта</option>
+                            <option value="1">1 - Земельный участок (:ЗУ)</option>
+                            <option value="2">2 - Объект капитального строительства (ОКС)</option>
+                            <option value="3">3 - Изыскания (Топосъемка)</option>
+                            <option value="4">4 - Вынос точек (Разбивка)</option>
+                            <option value="5">5 - Заключение кадастрового инженера (ЗКИ)</option>
+                            <option value="6">6 - Акт обследование (Наличие/отсутствие строений)</option>
+                            <option value="7">7 - Экспертное заключение (Экспертиза)</option>
+                            <option value="8">8 - Ортофотоплан (Ортофото)</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="validationServer04" class="form-label">Кадастровый номер или квартал</label>
+                        <input class="form-control form-control-sm" type="text" placeholder="Кадастровый номер" aria-label=".form-control-sm example">
+                    </div>
+
+                    <div class="col-md">
+                        <label for="validationServer05" class="form-label">Адрес/местоположение объекта</label>
+                        <input class="form-control form-control-sm" type="text" placeholder="Адрес объекта" aria-label=".form-control-sm example">
+                    </div>
+
+                    </div>
+                    <hr class="hr">
+
+<h3 class="primer1"> <center>Договор</center> </h3>
+
+                    <div class="row g-3">
+                    <div class="col-md-3">
+                        <label for="validationServer03" class="form-label">Номер договора</label>
+
+
+
+</form>
+                </div>
+
 {% endblock %}
