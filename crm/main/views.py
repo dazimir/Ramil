@@ -192,15 +192,6 @@ class CardsDeleteView_UL(DeleteView):
     template_name = 'main/card-delete_UL.html'
 
 
-class CardsUpdateView_UL(UpdateView):
-    model = URCustomer
-    success_url = '/spisok_zayavit_UL'
-    template_name = 'main/zayavitel_UL.html'
-    context_object_name = 'article'
-    form_class = InputULForm
-
-
-# ======================================================================================
 
 
 def spisok_zayavit_FL(request):

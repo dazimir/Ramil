@@ -16,7 +16,7 @@ urlpatterns = [
     path('<int:pk>/card-update_FL', views.CardsUpdateView_FL.as_view(), name='card-update_FL'),
 
     path('<int:pk>/card-delete_UL', views.CardsDeleteView_UL.as_view(), name='card-delete_UL'),
-    path('<int:pk>/card-update_UL', views.CardsUpdateView_UL.as_view(), name='card-update_UL'),
+    # path('<int:pk>/card-update_UL', views.CardsUpdateView_UL.as_view(), name='card-update_UL'),
 
 
     path('spisok_zayavit_FL', views.spisok_zayavit_FL, name='spisok_zayavit_FL'),
