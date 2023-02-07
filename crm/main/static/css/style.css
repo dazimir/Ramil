@@ -335,6 +335,38 @@
   background: lightpink;
 }
 
+.borddiv1 {
+    background: #ffdead; /* Цвет фона */
+    outline: 1px solid #000; /* Чёрная рамка */
+    border: 2px solid #fff; /* Белая рамка */
+    border-radius: 5px; /* Радиус скругления */
+    padding: 2px;
+}
+
+.borddiv2 {
+    background: #B0E0E6; /* Цвет фона */
+    outline: 1px solid #000; /* Чёрная рамка */
+    border: 2px solid #fff; /* Белая рамка */
+    border-radius: 5px; /* Радиус скругления */
+    padding: 2px;
+}
+
+.borddiv3 {
+    background: #F0E68C; /* Цвет фона */
+    outline: 1px solid #000; /* Чёрная рамка */
+    border: 2px solid #fff; /* Белая рамка */
+    border-radius: 5px; /* Радиус скругления */
+    padding: 2px;
+}
+
+.borddiv4 {
+    background: #7FFFD4; /* Цвет фона */
+    outline: 1px solid #000; /* Чёрная рамка */
+    border: 2px solid #fff; /* Белая рамка */
+    border-radius: 5px; /* Радиус скругления */
+    padding: 2px;
+}
+
 @media (max-width: 420px) {
   .sidebar.close .nav-links li .sub-menu{
     display: none;
