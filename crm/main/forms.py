@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm, TextInput
+from django.forms import ModelForm, TextInput, CharField
 from .models import *
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -10,7 +10,7 @@ class LoginUserForm(AuthenticationForm):
 
 
 # --------------------------------------------------------------------------------------------------------------------------------
-# создаем класс КАРТОЧКА ЗАЯВИТЕЛЯ
+# создаем класс КАРТОЧКА ЗАЯВИТЕЛЯ ФЛ
 
 class InputFLForm(ModelForm):
     class Meta:
@@ -82,7 +82,7 @@ class InputFLForm(ModelForm):
 
 
 # --------------------------------------------------------------------------------------------------------------------------------
-# создаем класс КАРТОЧКА ЗАЯВИТЕЛЯ
+# создаем класс КАРТОЧКА ЗАЯВИТЕЛЯ ЮЛ
 
 class InputULForm(ModelForm):
     class Meta:
@@ -125,5 +125,191 @@ class InputULForm(ModelForm):
             "ul_email": TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Email организации'}),
+
+        }
+
+
+
+# --------------------------------------------------------------------------------------------------------------------------------
+# создаем класс КАРТОЧКА ОБЪЕКТА
+
+class InputObjectCardForm(ModelForm):
+    class Meta:
+        model = TaskObject
+        fields = ['task_connection', 'task_vid', 'task_kadnom', 'task_address',
+                  'task_nomdogovor', 'task_datedogovor', 'task_skandogovor',
+                  'task_kontakt', 'task_kontakt_phone', 'task_kontakt_email', 'task_kontakt_info',
+                  'task_skan_link1', 'task_nom_link1', 'task_data_link1',
+                  'task_skan_link2', 'task_nom_link2', 'task_data_link2',
+                  'task_skan_link3', 'task_nom_link3', 'task_data_link3',
+                  'task_skan_link4', 'task_nom_link4', 'task_data_link4',
+                  'task_skan_link5', 'task_nom_link5', 'task_data_link5',
+                  'task_skan_link6', 'task_nom_link6', 'task_data_link6',
+                  'task_skan_link11', 'task_nom_link11', 'task_data_link11',
+                  'task_skan_link12', 'task_nom_link12', 'task_data_link12',
+                  'task_skan_link13', 'task_nom_link13', 'task_data_link13',
+                  'task_skan_link14', 'task_nom_link14', 'task_data_link14',
+                  'task_skan_link15', 'task_nom_link15', 'task_data_link15',
+                  'task_skan_link16', 'task_nom_link16', 'task_data_link16'
+                  ]
+        widgets = {
+            "task_connection": TextInput(attrs={
+                'class': 'form-select',
+                'id': 'zakazchik',
+                'placeholder': 'Выбери заказчика'}),
+
+            "task_vid": TextInput(attrs={
+                'class': 'form-select',
+                'placeholder': 'Выбири вид работ'}),
+
+            "task_kadnom": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Кадастровый номер'}),
+
+            "task_address": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Адрес объекта'}),
+
+            "task_nomdogovor": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер договора'}),
+
+            "task_datedogovor": TextInput(attrs={'type': 'date',
+                                                  'class': 'form-control',
+                                                  'placeholder': 'Дата договора', 'type': 'date'}),
+
+            "task_skandogovor": TextInput(attrs={
+                'type': 'file',
+                'class': 'form-control',
+                'placeholder': 'Скан договора'}),
+
+            "task_kontakt": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'ФИО контактного лица'}),
+
+            "task_kontakt_phone": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Телефон контактного лица'}),
+
+            "task_kontakt_email": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Email контактного лица'}),
+
+            "task_kontakt_info": CharField(attrs={
+                'class': 'form-control',
+                'placeholder': 'Дополнительная информация'}),
+
+
+            "task_skan_link1": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link1": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link1": TextInput(attrs={'type': 'date',
+                                                  'class': 'form-control',
+                                                  'placeholder': 'Дата документа', 'type': 'date'}),
+            "task_skan_link2": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link2": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link2": TextInput(attrs={'type': 'date',
+                                                'class': 'form-control',
+                                                'placeholder': 'Дата документа', 'type': 'date'}),
+            "task_skan_link3": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link3": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link3": TextInput(attrs={'type': 'date',
+                                                'class': 'form-control',
+                                                'placeholder': 'Дата документа', 'type': 'date'}),
+            "task_skan_link4": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link4": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link4": TextInput(attrs={'type': 'date',
+                                                'class': 'form-control',
+                                                'placeholder': 'Дата документа', 'type': 'date'}),
+            "task_skan_link5": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link5": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link5": TextInput(attrs={'type': 'date',
+                                                'class': 'form-control',
+                                                'placeholder': 'Дата документа', 'type': 'date'}),
+            "task_skan_link6": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link6": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link6": TextInput(attrs={'type': 'date',
+                                                'class': 'form-control',
+                                                'placeholder': 'Дата документа', 'type': 'date'}),
+
+
+
+            "task_skan_link11": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link11": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link11": TextInput(attrs={'type': 'date',
+                                                'class': 'form-control',
+                                                'placeholder': 'Дата документа', 'type': 'date'}),
+            "task_skan_link12": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link12": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link12": TextInput(attrs={'type': 'date',
+                                                 'class': 'form-control',
+                                                 'placeholder': 'Дата документа', 'type': 'date'}),
+            "task_skan_link13": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link13": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link13": TextInput(attrs={'type': 'date',
+                                                 'class': 'form-control',
+                                                 'placeholder': 'Дата документа', 'type': 'date'}),
+            "task_skan_link14": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link14": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link14": TextInput(attrs={'type': 'date',
+                                                 'class': 'form-control',
+                                                 'placeholder': 'Дата документа', 'type': 'date'}),
+            "task_skan_link15": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link15": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link15": TextInput(attrs={'type': 'date',
+                                                 'class': 'form-control',
+                                                 'placeholder': 'Дата документа', 'type': 'date'}),
+            "task_skan_link16": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Приложенный документ'}),
+            "task_nom_link16": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Номер документа'}),
+            "task_data_link16": TextInput(attrs={'type': 'date',
+                                                 'class': 'form-control',
+                                                 'placeholder': 'Дата документа', 'type': 'date'}),
 
         }
