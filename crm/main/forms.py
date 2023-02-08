@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm, TextInput, CharField
+from django.forms import ModelForm, TextInput, Textarea
 from .models import *
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -163,51 +163,51 @@ class InputObjectCardForm(ModelForm):
                 'placeholder': 'Выбири вид работ'}),
 
             "task_kadnom": TextInput(attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-sm',
                 'placeholder': 'Кадастровый номер'}),
 
             "task_address": TextInput(attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-sm',
                 'placeholder': 'Адрес объекта'}),
 
             "task_nomdogovor": TextInput(attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-sm',
                 'placeholder': 'Номер договора'}),
 
             "task_datedogovor": TextInput(attrs={'type': 'date',
-                                                  'class': 'form-control',
+                                                  'class': 'form-control form-control-sm ',
                                                   'placeholder': 'Дата договора', 'type': 'date'}),
 
             "task_skandogovor": TextInput(attrs={
                 'type': 'file',
-                'class': 'form-control',
+                'class': 'form-control form-control-sm',
                 'placeholder': 'Скан договора'}),
 
             "task_kontakt": TextInput(attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-sm',
                 'placeholder': 'ФИО контактного лица'}),
 
             "task_kontakt_phone": TextInput(attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-sm',
                 'placeholder': 'Телефон контактного лица'}),
 
             "task_kontakt_email": TextInput(attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-sm',
                 'placeholder': 'Email контактного лица'}),
 
-            "task_kontakt_info": CharField(attrs={
-                'class': 'form-control',
-                'placeholder': 'Дополнительная информация'}),
+            "task_kontakt_info": Textarea(attrs={
+                'class': 'form-control form-control-sm',
+                'placeholder': 'Пояснения'}),
 
 
             "task_skan_link1": TextInput(attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-sm',
                 'placeholder': 'Приложенный документ'}),
             "task_nom_link1": TextInput(attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-sm',
                 'placeholder': 'Номер документа'}),
             "task_data_link1": TextInput(attrs={'type': 'date',
-                                                  'class': 'form-control',
+                                                  'class': 'form-control form-control-sm',
                                                   'placeholder': 'Дата документа', 'type': 'date'}),
             "task_skan_link2": TextInput(attrs={
                 'class': 'form-control',

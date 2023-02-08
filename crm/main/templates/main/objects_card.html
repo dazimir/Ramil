@@ -75,12 +75,12 @@ CRM "ГК-НК"
 
                     <div class="col-md-3">
                         <label for="validationServer04" class="form-label">Кадастровый номер или квартал</label>
-                        <input class="form-control form-control-sm" type="text" placeholder="Кадастровый номер" aria-label=".form-control-sm example">
+                        {{ form.task_kadnom}}
                     </div>
 
                     <div class="col-md">
                         <label for="validationServer05" class="form-label">Адрес/местоположение объекта</label>
-                        <input class="form-control form-control-sm" type="text" placeholder="Адрес объекта" aria-label=".form-control-sm example">
+                        {{ form.task_address}}
                     </div>
 
                     </div>
@@ -91,17 +91,17 @@ CRM "ГК-НК"
                     <div class="row g-3">
                     <div class="col-md-3">
                         <label for="validationServer03" class="form-label">Номер договора</label>
-                        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+                        {{ form.task_nomdogovor}}
                     </div>
 
                     <div class="col-md-1">
                         <label for="validationServer03" class="form-label">Дата договора</label>
-                        <input class="form-control form-control-sm" type="Date" placeholder="Дата договора" aria-label=".form-control-sm example">
+                        {{ form.task_datedogovor}}
                     </div>
 
                     <div class="col-md-4">
                         <label for="validationServer03" class="form-label">Приложить скан договора</label>
-                        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+                        {{ form.task_skandogovor}}
                     </div>
                     </div>
                 <hr class="hr">
@@ -111,23 +111,24 @@ CRM "ГК-НК"
                     <div class="row g-3">
                     <div class="col-md-3">
                         <label for="validationServer03" class="form-label">Фамилия Имя Отчество</label>
-                        <input class="form-control form-control-sm" type="text" placeholder="ФИО" aria-label=".form-control-sm example">
+                        {{ form.task_kontakt}}
                     </div>
 
                     <div class="col-md-2">
                         <label for="validationServer03" class="form-label">Контактный телефон</label>
-                        <input class="form-control form-control-sm" type="text" placeholder="Контактый телефон" aria-label=".form-control-sm example">
+                        {{ form.task_kontakt_phone}}
                     </div>
 
                     <div class="col-md-2">
                         <label for="validationServer03" class="form-label">EMail</label>
-                        <input class="form-control form-control-sm" type="text" placeholder="Email" aria-label=".form-control-sm example">
+                        {{ form.task_kontakt_email}}
                     </div>
 
                     <div class="col-md-4">
                         <label for="validationServer03" class="form-label">Пояснения</label>
                             <div class="input-group">
-                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                                {{ form.task_kontakt_info}}
+                            <!--<textarea class="form-control" aria-label="With textarea"></textarea>-->
                             </div>
                     </div>
                 <hr class="hr">
@@ -142,15 +143,15 @@ CRM "ГК-НК"
 <div class="row borddiv1">
     <div class="col g-6 borddiv3">
         <label for="validationServer03" class="form-label">Выписки ЕГРН (КПТ) -1-</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_kadnom}}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_kadnom}}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_kadnom}}
     </div>
 </div>
             <br>

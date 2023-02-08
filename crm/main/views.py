@@ -6,7 +6,7 @@ from django import forms
 from django.urls import reverse_lazy
 from django.views.generic import DeleteView, UpdateView
 
-from .forms import LoginUserForm, InputFLForm, InputULForm
+from .forms import LoginUserForm, InputFLForm, InputULForm, InputObjectCardForm
 from .models import *
 
 from django.shortcuts import render
@@ -208,3 +208,42 @@ def spisok_zayavit_UL(request):
         print('------ это GET  -------')
         return render(request, 'main/spisok_zayavit_UL.html',
                       {'title2': 'Карточка', 'cards': cardsUL})  # выводим все карточки
+
+
+
+
+
+
+
+
+
+
+# ====================================================================================================
+
+# def objects_card(request):
+#     if request.method == 'GET':
+#         cards = TaskObject.objects.order_by('-id')
+#         print('------ это GET  -------')
+#         return render(request, 'main/objects_card.html',
+#                       {'title2': 'Карточка', 'cards': cards})  # выводим все карточки
+
+def objects_card(request):
+    error = ''
+    print('=====1=======')
+    if request.method == 'POST':
+        print('===== если POST =======')
+        form = InputObjectCardForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print('==== если валид =======')
+            return redirect('/')
+        else:
+            error = 'Поля заполнены не верно'
+    form = InputObjectCardForm()
+    context = {
+        'form': form,
+        'error': error,
+        'page_title': 'Ввод данных объекта, Карточка объекта',
+        'temp': 'НОВАЯ'
+    }
+    return render(request, 'main/objects_card.html', context)
