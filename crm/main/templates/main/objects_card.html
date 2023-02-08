@@ -40,12 +40,13 @@ CRM "ГК-НК"
             <div class="col-md-4">
                 <div class="md-3">
                 <label for="validationServer01" class="form-label">Заявитель </label>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected="">Выбирите заявителя из последних</option>
-                    <option value="1">последний заявитель из Б/Д</option>
-                    <option value="2">пред последний заявитель из Б/Д</option>
-                    <option value="3">пред пред последний заявитель из Б/Д</option>
-                </select>
+                    {{ form.task_connection}}
+<!--                <select class="form-select form-select-sm" aria-label=".form-select-sm example">-->
+<!--                    <option selected="">Выбирите заявителя из последних</option>-->
+<!--                    <option value="1">последний заявитель из Б/Д</option>-->
+<!--                    <option value="2">пред последний заявитель из Б/Д</option>-->
+<!--                    <option value="3">пред пред последний заявитель из Б/Д</option>-->
+<!--                </select>-->
                 </div>
 
             </div>
@@ -60,17 +61,19 @@ CRM "ГК-НК"
                 <div class="row g-3">
                     <div class="col-md-3">
                         <label for="validationServer03" class="form-label">Вид работ</label>
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                            <option selected="">Выбирите вид объекта</option>
-                            <option value="1">1 - Земельный участок (:ЗУ)</option>
-                            <option value="2">2 - Объект капитального строительства (ОКС)</option>
-                            <option value="3">3 - Изыскания (Топосъемка)</option>
-                            <option value="4">4 - Вынос точек (Разбивка)</option>
-                            <option value="5">5 - Заключение кадастрового инженера (ЗКИ)</option>
-                            <option value="6">6 - Акт обследование (Наличие/отсутствие строений)</option>
-                            <option value="7">7 - Экспертное заключение (Экспертиза)</option>
-                            <option value="8">8 - Ортофотоплан (Ортофото)</option>
-                        </select>
+                        {{ form.task_vid}}
+
+<!--                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">-->
+<!--                            <option selected="">Выбирите вид объекта</option>-->
+<!--                            <option value="1">1 - Земельный участок (:ЗУ)</option>-->
+<!--                            <option value="2">2 - Объект капитального строительства (ОКС)</option>-->
+<!--                            <option value="3">3 - Изыскания (Топосъемка)</option>-->
+<!--                            <option value="4">4 - Вынос точек (Разбивка)</option>-->
+<!--                            <option value="5">5 - Заключение кадастрового инженера (ЗКИ)</option>-->
+<!--                            <option value="6">6 - Акт обследование (Наличие/отсутствие строений)</option>-->
+<!--                            <option value="7">7 - Экспертное заключение (Экспертиза)</option>-->
+<!--                            <option value="8">8 - Ортофотоплан (Ортофото)</option>-->
+<!--                        </select>-->
                     </div>
 
                     <div class="col-md-3">
@@ -143,30 +146,30 @@ CRM "ГК-НК"
 <div class="row borddiv1">
     <div class="col g-6 borddiv3">
         <label for="validationServer03" class="form-label">Выписки ЕГРН (КПТ) -1-</label>
-        {{ form.task_kadnom}}
+        {{ form.task_skan_link1 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        {{ form.task_kadnom}}
+        {{ form.task_nom_link1 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        {{ form.task_kadnom}}
+        {{ form.task_data_link1 }}
     </div>
 </div>
             <br>
 <div class="row borddiv1">
     <div class="col g-6 borddiv3">
         <label for="validationServer03" class="form-label">Выписки ЕГРН (КПТ) -2-</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link2 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link2 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_data_link2 }}
     </div>
 </div>
 
@@ -175,15 +178,15 @@ CRM "ГК-НК"
 <div class="row borddiv1">
     <div class="col g-6 borddiv3">
         <label for="validationServer03" class="form-label">Выписки ЕГРН (КПТ) -3-</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link3 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link3 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_data_link3 }}
     </div>
 </div>
 
@@ -191,15 +194,15 @@ CRM "ГК-НК"
 <div class="row borddiv1">
     <div class="col g-6 borddiv3">
         <label for="validationServer03" class="form-label">Выписки ЕГРН (КПТ) -4-</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link4 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link4 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_data_link4 }}
     </div>
 </div>
 
@@ -209,15 +212,15 @@ CRM "ГК-НК"
 <div class="row borddiv1">
     <div class="col g-6 borddiv3">
         <label for="validationServer03" class="form-label">Выписки ЕГРН (КПТ) -5-</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link5 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link5 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_data_link5 }}
     </div>
 </div>
 
@@ -226,15 +229,15 @@ CRM "ГК-НК"
 <div class="row borddiv1">
     <div class="col g-6 borddiv3">
         <label for="validationServer03" class="form-label">Выписки ЕГРН (КПТ) -6-</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link6 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link6 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_data_link6 }}
     </div>
 </div>
 
@@ -248,30 +251,30 @@ CRM "ГК-НК"
 <div class="row borddiv2">
     <div class="col g-6 borddiv4">
         <label for="validationServer03" class="form-label">Свидетельство</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link11 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link11 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+       {{ form.task_data_link11 }}
     </div>
 </div>
             <br>
 <div class="row borddiv2">
     <div class="col g-6 borddiv4">
         <label for="validationServer03" class="form-label">Схема на КПТ</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link12 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link12 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_data_link12 }}
     </div>
 </div>
 
@@ -280,15 +283,15 @@ CRM "ГК-НК"
 <div class="row borddiv2">
     <div class="col g-6 borddiv4">
         <label for="validationServer03" class="form-label">Распоряжение/постановление</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link13 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link13 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_data_link13 }}
     </div>
 </div>
 
@@ -296,15 +299,15 @@ CRM "ГК-НК"
 <div class="row borddiv2">
     <div class="col g-6 borddiv4">
         <label for="validationServer03" class="form-label">Землеустраительное дело</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link14 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link14 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_data_link14 }}
     </div>
 </div>
 
@@ -314,15 +317,15 @@ CRM "ГК-НК"
 <div class="row borddiv2">
     <div class="col g-6 borddiv4">
         <label for="validationServer03" class="form-label">Ортофото</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link15 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link15 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_data_link15 }}
     </div>
 </div>
 
@@ -331,15 +334,15 @@ CRM "ГК-НК"
 <div class="row borddiv2">
     <div class="col g-6 borddiv4">
         <label for="validationServer03" class="form-label">Паспорт</label>
-        <input type="file" class="form-control form-control-sm" aria-label="Small file input example">
+        {{ form.task_skan_link16 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Номер документа</label>
-        <input class="form-control form-control-sm" type="text" placeholder="Номер договора" aria-label=".form-control-sm example">
+        {{ form.task_nom_link16 }}
     </div>
     <div class="col">
         <label for="validationServer03" class="form-label">Дата документа</label>
-        <input class="form-control form-control-sm" type="Date" placeholder="Дата документа" aria-label=".form-control-sm example">
+        {{ form.task_data_link16 }}
     </div>
 </div>
 

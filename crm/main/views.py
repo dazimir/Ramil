@@ -43,6 +43,7 @@ def zayavlenie_GOS(request):
 
 # ======================================================================================
 def objects_card(request):
+
     return render(request, 'main/objects_card.html')
 
 
@@ -220,16 +221,11 @@ def spisok_zayavit_UL(request):
 
 # ====================================================================================================
 
-# def objects_card(request):
-#     if request.method == 'GET':
-#         cards = TaskObject.objects.order_by('-id')
-#         print('------ это GET  -------')
-#         return render(request, 'main/objects_card.html',
-#                       {'title2': 'Карточка', 'cards': cards})  # выводим все карточки
 
 def objects_card(request):
     error = ''
-    print('=====1=======')
+    print('парам пам пам !!! Тут делаем запрос к таблице физ лиц и получаем список заявителей для привязки')
+
     if request.method == 'POST':
         print('===== если POST =======')
         form = InputObjectCardForm(request.POST)
